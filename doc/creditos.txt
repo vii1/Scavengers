@@ -1,0 +1,4 @@
+Nave prota:
+  url: https://sketchfab.com/3d-models/space-ship-91aad43c4a7449278d10c362aeac1c12
+  licencia: CC-BY
+  autor: wildcake

@@ -1,0 +1,8 @@
+* Importar modelo a Blender
+* Quedarse sólo con la geometría necesaria.
+* Texturizar, iluminar, generar UVs
+* Cocinar textura
+* Exportar a OBJ
+* Usar https://www.drububu.com/miscellaneous/voxelizer/?out=kvx para generar voxels. Exportar como VOX o KVX
+* Usar Goxel o MagicaVoxel para generar slices
+* Pasar slices a FPG (FALTA HERRAMIENTA)
