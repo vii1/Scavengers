@@ -5,4 +5,5 @@
 * Exportar a OBJ
 * Usar https://www.drububu.com/miscellaneous/voxelizer/?out=kvx para generar voxels. Exportar como VOX o KVX
 * Usar Goxel o MagicaVoxel para generar slices
-* Pasar slices a FPG (FALTA HERRAMIENTA)
+* Dividir slices en imágenes sueltas con: magick convert slices.png -crop NUMXxNUMY@ +repage +adjoin %03d.png
+* Usar el editor de FPG de BennuGD para generar un FPG con las slices
