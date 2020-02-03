@@ -15,8 +15,8 @@ fpg_palette = map_palette
 fpg_map = Struct(
     "code" / Int32ul,
     "length" / Rebuild(Int32ul, len_(this)),
-    "description" / Array(32, Int8ul),
-    "filename" / Array(12, Int8ul),
+    "description" / FixedSized(32, NullStripped(GreedyBytes)),
+    "filename" / FixedSized(12, NullStripped(GreedyBytes)),
     "width" / Int32ul,
     "height" / Int32ul,
     "n_cpoints" / Rebuild(Int32ul, len_(this.cpoints)),

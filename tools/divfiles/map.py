@@ -11,12 +11,12 @@ map_header = Struct(
     "width" / Int16ul,
     "height" / Int16ul,
     "code" / Int32ul,
-    "description" / Int8ul[32]
+    "description" / FixedSized(32, NullStripped(GreedyBytes))
 )
-
+PaddedString
 map_palette = Struct(
-    "colors" / Array(256, pal_rgb),
-    "ranges" / Array(16, pal_range)
+    "colors" / Default(Array(256, pal_rgb), [{}]*256),
+    "ranges" / Default(Array(16, pal_range), [{}]*16)
 )
 
 map_cpoint = Struct(
