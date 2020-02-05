@@ -8,7 +8,8 @@ pal_header = Struct(
 pal_rgb = Struct(
     "r" / Default(Int8ul, 0),
     "g" / Default(Int8ul, 0),
-    "b" / Default(Int8ul, 0)
+    "b" / Default(Int8ul, 0),
+    Check(this.r < 64 and this.g < 64 and this.b < 64)
 )
 
 pal_range = Struct(

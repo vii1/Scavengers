@@ -14,14 +14,18 @@ fpg_palette = map_palette
 
 fpg_map = Struct(
     "code" / Int32ul,
-    "length" / Rebuild(Int32ul, len_(this)),
+    "length_pos" / Tell,
+    "length" / Padding(4),
     "description" / FixedSized(32, NullStripped(GreedyBytes)),
     "filename" / FixedSized(12, NullStripped(GreedyBytes)),
     "width" / Int32ul,
     "height" / Int32ul,
     "n_cpoints" / Rebuild(Int32ul, len_(this.cpoints)),
     "cpoints" / Array(this.n_cpoints, map_cpoint),
-    "pixels" / Array(this.width * this.height, Int8ul)
+    "pixels" / HexDump(Array(this.width * this.height, Int8ul)),
+    "end_pos" / Tell,
+    "total_length" / Computed(lambda this: this.end_pos - this.length_pos + 4),
+    "length" / Pointer(this.length_pos, Rebuild(Int32ul, this.total_length))
 )
 
 fpg_file = Struct(
